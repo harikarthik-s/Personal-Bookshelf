@@ -1,0 +1,50 @@
+.card-container {
+  display: grid;
+  padding-top: 100px;
+  padding-left: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  .card {
+    background-color: #e0e0e0;
+    padding: 20px;
+    width: 336px;
+    height: 192px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      #e0e0e0 0%,
+      #f0f0f0 20%,
+      #e0e0e0 40%,
+      #e0e0e0 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
